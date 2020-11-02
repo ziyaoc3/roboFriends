@@ -40,7 +40,7 @@ const Card =(props) => {
 			<img  alt ='ROBOT' src = {`https://robohash.org/${id}?size=200x200`}/>
 			<div>
 				<h2 style ={{ width: '200px' , whiteSpace: 'nowrap', overflow:'hidden' , textOverflow: 'ellipsis' }}>
-					{name }
+					{name}
 				</h2>
 				<p>{e }</p>
 			</div>

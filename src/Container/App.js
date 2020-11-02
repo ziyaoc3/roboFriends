@@ -3,6 +3,7 @@ import Cardlist from '../Component/Cardlist.js';
 import SearchBox from '../Component/SearchBox.js';
 import './App.css';
 import Scroll from '../Component/Scroll.js';
+import ErrorBoundary from '../Component/ErrorBoundary.js';
 
 class App extends Component  {
 	constructor () {
@@ -29,15 +30,17 @@ class App extends Component  {
 			return robot.name.toLowerCase().includes(searchField.toLowerCase());
 		});
 		if (!robos.length){
-			return <h1 className = 'f1 fw9 tc flex justify-center'> Loading </h1>
+			return <h1 className = 'f1 fw9 tc '> Loading </h1>
 		} else {
 			return(
 			<div className = 'tc'>
-			<h1 className ='f1 fw9'> RoboFriends</h1>
-			<SearchBox searchChange= {this.onSearchChange} />
-			<Scroll>
-				<Cardlist robo = {filterRobo}/>
-			</Scroll>
+				<h1 className ='f1 fw9'> RoboFriends</h1>
+				<SearchBox searchChange= {this.onSearchChange} />
+				<Scroll>
+					<ErrorBoundary >
+						<Cardlist robo = {filterRobo}/>
+					</ErrorBoundary>
+				</Scroll>
 			</div>
 			);		
 		}	
