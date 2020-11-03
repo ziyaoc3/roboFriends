@@ -3,7 +3,9 @@ import Card from './Card';
 
 
 const cardlist =({robo}) =>{
-	
+//	if (true){
+//		throw new Error ("nooooo!")
+//	}  using this one to test error message
 	return(
 		<div>
 			{
